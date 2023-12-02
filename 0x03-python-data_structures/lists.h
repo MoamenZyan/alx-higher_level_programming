@@ -10,15 +10,15 @@
  * for project
  */
 
+typedef struct listint_s
+{
+	int n;
+	struct listint_s *next;
+} listint_t;
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
-
-typedef struct listint_s
-{
-    int n;
-    struct listint_s *next;
-} listint_t;
 
 size_t print_listint(const listint_t *h);
 listint_t *add_nodeint_end(listint_t **head, const int n);
