@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
         "D": 500,
         "M": 1000
         }
-    if type(roman_string) is str or roman_string is None:
+    if type(roman_string) is not str or roman_string is None:
         return 0
     total = 0
     length = len(roman_string)
@@ -27,3 +27,19 @@ def roman_to_int(roman_string):
         i += 2
         j += 2
     return (int(total))
+
+
+roman_number = "X"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "VII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "IX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "LXXXVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "DCCVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
