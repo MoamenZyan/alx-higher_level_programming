@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
         "M": 1000
         }
     if type(roman_string) is str or roman_string is None:
-        return None
+        return 0
     total = 0
     length = len(roman_string)
     i, j = 0, 1
