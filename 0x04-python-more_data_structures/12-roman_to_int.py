@@ -15,14 +15,14 @@ def roman_to_int(roman_string):
     length = len(roman_string)
     i, j = 0, 1
     while (i < length):
-        total += dict[roman_string[i]]
+        total += int(dict[roman_string[i]])
         while (j < length):
             if dict[roman_string[i]] < dict[roman_string[j]]:
-                total -= dict[roman_string[i]]
-                total += dict[roman_string[j]] - dict[roman_string[i]]
+                total -= int(dict[roman_string[i]])
+                total += int(dict[roman_string[j]] - dict[roman_string[i]])
                 break
             else:
-                total += (dict[roman_string[j]])
+                total += int(dict[roman_string[j]])
                 break
         i += 2
         j += 2
