@@ -26,4 +26,4 @@ def roman_to_int(roman_string):
                 break
         i += 2
         j += 2
-    return (total)
+    return (int(total))
