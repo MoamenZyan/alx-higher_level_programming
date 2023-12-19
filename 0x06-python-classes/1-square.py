@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 
+"""This module is for square class."""
+
+
 class Square:
-    """This is a Square class"""
+    """This is a Square class."""
+
     def __init__(self, size):
-        """this is a init method to initialize the instance with size variable
+        """Init method to initialize the instance with size variable.
+
         Args:
-            param1: this is size of the square
+            param1: this is size of the square.
+
         Returns:
-            Nothing
+            Nothing.
         """
         self.__size = size
