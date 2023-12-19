@@ -3,6 +3,3 @@
 class Square:
     """This is an empty Square class"""
     pass
-
-
-help(Square)
