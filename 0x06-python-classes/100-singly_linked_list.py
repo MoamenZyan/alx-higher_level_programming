@@ -1,18 +1,28 @@
+#!/usr/bin/python3
+
+"""This Module Is For Linked List."""
+
+
 class Node:
-    """Node class for a singly linked list
+    """Node class for a singly linked list.
+
     Attributes:
-        __data (int): The data stored in the node
-        __next_node (Node): Reference to the next node in the linked list
+        __data (int): The data stored in the node.
+        __next_node (Node): Reference to the next node in the linked list.
+
     Methods:
-        __init__: Initializes a new instance of the Node class
+        __init__: Initializes a new instance of the Node class.
     """
+
     def __init__(self, data, next_node=None):
-        """Initializes a new instance of the Node class
+        """Initialize a new instance of the Node class.
+
         Args:
-            data (int): The data to be stored in the node
-            next_node (Node, optional): the next node in the linked list
+            data (int): The data to be stored in the node.
+            next_node (Node, optional): the next node in the linked list.
+
         Raises:
-            TypeError: If data is not an integer or next_node is not a Node
+            TypeError: If data is not an integer or next_node is not a Node.
         """
         if isinstance(data, int):
             self.__data = data
@@ -26,19 +36,22 @@ class Node:
 
     @property
     def data(self):
-        """Gets the data stored in the node
+        """Get the data stored in the node.
+
         Returns:
-            int: The data stored in the node
+            int: The data stored in the node.
         """
         return self.__data
 
     @data.setter
     def data(self, value):
-        """Sets the data in the node
+        """Set the data in the node.
+
         Args:
-            value (int): The new data to be set
+            value (int): The new data to be set.
+
         Raises:
-            TypeError: If the new data is not an integer
+            TypeError: If the new data is not an integer.
         """
         if isinstance(value, int):
             self.__data = value
@@ -47,19 +60,22 @@ class Node:
 
     @property
     def next_node(self):
-        """Gets the reference to the next node
+        """Get the reference to the next node.
+
         Returns:
-            Node: Reference to the next node
+            Node: Reference to the next node.
         """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        """Sets the reference to the next node
+        """Set the reference to the next node.
+
         Args:
-            value (Node or None): The new reference to the next node
+            value (Node or None): The new reference to the next node.
+
         Raises:
-            TypeError: If the new reference is not a Node object or None
+            TypeError: If the new reference is not a Node object or None.
         """
         if isinstance(value, Node) or value is None:
             self.__next_node = value
@@ -68,23 +84,26 @@ class Node:
 
 
 class SinglyLinkedList:
-    """SinglyLinkedList class representing a singly linked list
+    """SinglyLinkedList class representing a singly linked list.
+
     Attributes:
-        __head (Node): Reference to the first node in the linked list
+        __head (Node): Reference to the first node in the linked list.
+
     Methods:
-        __init__: Initializes a new instance of the SinglyLinkedList class
-        sorted_insert: Inserts a new node with sorted order into the list
-        __str__: Returns a string representation of the linked list
+        __init__: Initializes a new instance of the SinglyLinkedList class.
+        sorted_insert: Inserts a new node with sorted order into the list.
+        __str__: Returns a string representation of the linked list.
     """
 
     def __init__(self):
-        """Initializes a new instance of the SinglyLinkedList class"""
+        """Initialize a new instance of the SinglyLinkedList class."""
         self.__head = None
 
     def sorted_insert(self, value):
-        """Inserts a new node with sorted order into the linked list
+        """Insert a new node with sorted order into the linked list.
+
         Args:
-            value (int): The data to be stored in the new node
+            value (int): The data to be stored in the new node.
         """
         new_node = Node(value)
 
@@ -101,9 +120,10 @@ class SinglyLinkedList:
         current.next_node = new_node
 
     def __str__(self):
-        """Returns a string representation of the linked list
+        """Return a string representation of the linked list.
+
         Returns:
-            str: String representation of the linked list
+            str: String representation of the linked list.
         """
         result = []
         current = self.__head
