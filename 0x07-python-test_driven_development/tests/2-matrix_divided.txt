@@ -1,0 +1,86 @@
+# tests/2-matrix_divided.txt
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+# check matrix is list:
+    >>> matrix_divided([[1,2,3],[4,5,6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix_divided([(1,2,3),(4,5,6)], 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1,2,3],(4,5,6)], 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([1,2,3], 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([], 1)
+    Traceback (most recent call last):
+        ...
+    IndexError: List is empty, index out of range
+
+    >>> matrix_divided([[1,2,3], []], 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided([{1,2,3}, [1,2,3]], 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([{1,2,3}, ], 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2], [3, [4]], [5, 6]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+# check elements in matrix
+
+    >>> matrix_divided([[1,2,3],[4,5,6]], 4)
+    [[0.25, 0.5, 0.75], [1.0, 1.25, 1.5]]
+
+    >>> matrix_divided([[1,2,3],[4,5,6]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1,2,3],[4,5,6]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[-1],[-2]], 2)
+    [[-0.5], [-1.0]]
+
+    >>> matrix_divided([[1, 2], [3, 4], [5, 6]], 2)
+    [[0.5, 1.0], [1.5, 2.0], [2.5, 3.0]]
+
+    >>> matrix_divided([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]], 2)
+    [[0.5, 1.0], [1.5, 2.0], [2.5, 3.0], [3.5, 4.0], [4.5, 5.0]]
+
+    >>> matrix_divided([[2.4164, 3.164], [4.63464, 5.4464]], 5)
+    [[0.48, 0.63], [0.93, 1.09]]
+
+    >>> matrix_divided([[4545.41546564, 123.1645634], [6.6464, 454.446454]], 8)
+    [[568.18, 15.4], [0.83, 56.81]]
+
+    >>> matrix_divided([[-2134.365464, -456.213634], [-2995.231354, -45647.16875634]], 15)
+    [[-142.29, -30.41], [-199.68, -3043.14]]
+
+    >>> matrix_divided([[float('inf'), 5],[float('-inf'), 5]], 5)
+    [[inf, 1.0], [-inf, 1.0]]
