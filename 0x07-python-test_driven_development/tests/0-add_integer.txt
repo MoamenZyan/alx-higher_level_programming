@@ -1,0 +1,47 @@
+# tests/0-add_integer.txt
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+# testing normal numbers:
+
+    >>> add_integer(5, 5)
+    10
+
+    >>> add_integer(0, 0)
+    0
+
+    >>> add_integer(-5, -5)
+    -10
+
+# testing wrong types:
+
+    >>> add_integer('5', 6)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer(5, '6')
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+
+    >>> add_integer(5, True)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(False, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(13.345, 2.16)
+    15
+
+    >>> add_integer(65657.64461, 355625)
+    421282
+
+    >>> add_integer(1.5, 1.5)
+    2
