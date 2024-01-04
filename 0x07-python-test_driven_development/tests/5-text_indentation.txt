@@ -1,0 +1,28 @@
+# tests/5-text_indentation.txt
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+# test text indentation
+    >>> text_indentation("""Hello my name is moamen.i love programming?what's up:""")
+    Hello my name is moamen.
+    <BLANKLINE>
+    i love programming?
+    <BLANKLINE>
+    what's up:
+    <BLANKLINE>
+
+# test text indentation
+    >>> text_indentation("Hello my name is moamen.i love programming?what's up:")
+    Hello my name is moamen.
+    <BLANKLINE>
+    i love programming?
+    <BLANKLINE>
+    what's up:
+    <BLANKLINE>
+
+# test text indentation
+    >>> text_indentation(3164)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
