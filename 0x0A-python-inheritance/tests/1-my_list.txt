@@ -1,0 +1,33 @@
+# tests/1-my_list.txt
+
+>>> MyList = __import__('1-my_list').MyList
+
+
+Correct class type:
+    >>> test = MyList()
+    >>> type(test) == MyList
+    True
+
+Correct Instance Type:
+    >>> test = MyList()
+    >>> isinstance(test, list)
+    True
+
+
+print_sorted method is an instance method:
+    >>> type(MyList.__dict__['print_sorted'])
+    <class 'function'>
+
+
+
+Normal list test:
+    >>> ml = MyList([2, 10, 1])
+    >>> ml.print_sorted()
+    [1, 2, 10]
+
+
+
+List already in order:
+    >>> ml = MyList([-10, 0, 1, 2, 10, 20, 100])
+    >>> ml.print_sorted()
+    [-10, 0, 1, 2, 10, 20, 100]
