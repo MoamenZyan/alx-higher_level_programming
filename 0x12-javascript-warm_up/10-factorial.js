@@ -1,11 +1,13 @@
 #!/usr/bin/node
 
-if (isNaN(Number(process.argv[2]))) {
-  console.log(1);
-} else {
-  let total = 1;
-  for (let i = Number(process.argv[2]); i >= 1; i--) {
-    total *= i;
+function fact (a) {
+  if (isNaN(Number(a))) {
+    return 1;
   }
-  console.log(total);
+  if (a === 1) {
+    return 1;
+  }
+  return a * fact(a - 1);
 }
+
+console.log(fact(process.argv[2]));
