@@ -6,9 +6,9 @@ class Square extends SquareE {
   charPrint (c) {
     let char;
     if (c !== undefined) {
-      char = 'X';
-    } else {
       char = c;
+    } else {
+      char = 'X';
     }
     for (let i = 0; i < this.height; i++) {
       let chars = '';
